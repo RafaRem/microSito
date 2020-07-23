@@ -1,0 +1,26 @@
+
+{% extends "footer.html" %}
+{# Cargamos la librería #}
+{% load bootstrap4 %}
+
+{# CSS Bootstrap #}
+{% bootstrap_css %}
+{% block content %}
+<div class="row  mt-5 mb-3">
+    {% for nota in notas %}
+        <div class="col-12 col-md-4 mt-4">
+            <div class="card mb-2 contenedor-card justify-content-center align-items-centert" style="background-color: #CFD0D2;"> 
+                <img class="card-img-top" src="media/Ahome_webn2.png"
+                alt="Card image cap">
+                <div class="card-body">
+                <h4 class="card-title font-weight-bold">{{nota.titulo}}</h4>
+                <p class="card-text">{{tri.periodoGubernamental.nombre}}</p>
+                <a class="btn btn-primary btn-md btn-rounded" >Ver más</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %} 
+</div>
+
+{% bootstrap_javascript jquery='full' %}
+{%endblock%}

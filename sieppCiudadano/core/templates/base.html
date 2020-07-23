@@ -1,0 +1,98 @@
+
+{% load staticfiles %}
+<link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="{%static 'css/colores.css'%}">
+<link rel="stylesheet" href="{%static 'css/base.css'%}">
+<link rel="stylesheet" href="{%static 'css/inicio.css'%}">
+<link rel="stylesheet" href="{%static 'css/dataTables.bootstrap4.css'%}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<!-- Custom styles for this template-->
+<link href="{%static 'css/sb-admin.css'%}" rel="stylesheet">
+<link href="{%static 'css/galeria.css'%}" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="http://allfont.net/allfont.css?fonts=montserrat" rel="stylesheet" type="text/css" />
+{% block extracss %}
+<style>
+  a{
+    font-family: 'Montserrat', arial;
+  }
+</style>
+{% endblock extracss %}
+
+{% block supercontent %}
+
+<header class="fixed-top">
+  <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light fixe-top">
+    <!-- Logo-Marca -->
+    <img class="navbar-brand mr-5" src="{%static 'images/2do.jpg' %}" alt="Logo" width="100px" height="75px">
+    <!-- Icono 3barras -->
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+      aria-label="Toggle navigation" style="margin-right: 44%;">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+    
+    <!-- Menu links  -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto text-center">
+        <li class="nav-item nav-1 mr-5 justify-content-center "  data-toggle="tooltip" data-placement="bottom" title="Seguriad Ciudadana y Protección Civil"  {% if request.path == '/eje/1' %} style="border-bottom: 5px solid #3C5A4F;" {%endif%}>
+          <a class="nav-link ml-3 mr-3" href="{% url 'Eje' idEje=1 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;1
+          </a>
+        </li>
+        <li class="nav-item-2 mr-5" data-toggle="tooltip" data-placement="bottom" title="Desarrollo Integral"  {% if request.path == '/eje/2' %} style="border-bottom: 5px solid #802C45;" {%endif%}>
+          <a class="nav-link nav-2 ml-3 mr-3" href="{% url 'Eje' idEje=2 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;2</a>
+        </li>
+        <li class="nav-item-3 mr-5" data-toggle="tooltip" data-placement="bottom" title="Desarrollo Social y Humano"  {% if request.path == '/eje/3' %} style="border-bottom: 5px solid #562033;" {%endif%}>
+          <a class="nav-link nav-3 ml-3 mr-3" href="{% url 'Eje' idEje=3 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;3</a>
+        </li>
+        <li class="nav-item-4 mr-5" data-toggle="tooltip" data-placement="bottom" title="Combate a la Corrupción y Participación Ciudadana"  {% if request.path == '/eje/4' %} style="border-bottom: 5px solid #AB905F;" {%endif%}>
+          <a class="nav-link nav-4 ml-3 mr-3" href="{% url 'Eje' idEje=4 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;4</a>
+        </li>
+        <li class="nav-item-5 mr-5" data-toggle="tooltip" data-placement="bottom" title="Promoción Económica y Medio Ambiente"  {% if request.path == '/eje/5' %} style="border-bottom: 5px solid #502F2C;" {%endif%}>
+          <a class="nav-link nav-5 ml-3 mr-3" href="{% url 'Eje' idEje=5 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;5</a>
+        </li>
+       
+      </ul>
+
+    </div>
+  </nav>
+  </header>
+    {# Important content stuff here #}
+    <div class="container-fluid">
+
+    </div>
+    {% block content %}
+    
+    {% endblock %}
+
+    <footer class="d-flex justify-content-center align-items-center mt-5" >
+      <h6 class="small text-uppercase mb-0">Dirección de Planeación e Innovación Gubernamental © 2020 derechos reservados. <a href="https://www.ahome.gob.mx/" target="_blank">h. ayuntamiento de ahome</a>. </h6>
+    </footer>
+{% endblock %}
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="{%static 'js/jquery.easing.min.js'%}"></script>
+<script src="{%static 'js/jquery.mask.min.js'%}"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<!--<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+{% block extrascripts %}
+<script>
+  $(document).ready(()=>{
+    $('[data-toggle="tooltip"]').css("color", "black");
+    $('[data-toggle="tooltip"]').tooltip(); 
+    
+  });
+</script>
+{% endblock %}
