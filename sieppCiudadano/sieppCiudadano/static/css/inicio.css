@@ -1,11 +1,8 @@
 
   .nav-item:hover{
-        
+     
     background: #3C5A4F !important;
     border-radius: 60px;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 33px;
 }
 a{
     padding-top: 4px !important;
@@ -17,37 +14,28 @@ nav div ul li a{
 }
 
 nav div ul li a:hover{
-    width: auto  !important;
+    
     color:#DBD6CE !important;
 }
 
 .nav-item-2:hover{
     background: #802C45;
     border-radius: 60px;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 33px;
+  
 }
 .nav-item-3:hover{
     background: #562033;
     border-radius: 60px;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 33px;
+ 
 }
 .nav-item-4:hover{
     background: #AB905F;
     border-radius: 60px;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 33px;
+ 
 }
 .nav-item-5:hover{
     background: #502F2C;
     border-radius: 60px;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 33px;
 }
 nav div ul li:active{
     color: rgb(250, 248, 248);
@@ -139,3 +127,267 @@ max-width: 75%;
     width: 100%;
 }
 
+/*button for shared*/
+
+.button_shared {
+  border-radius: 4px;
+  background-color: #3014cc;
+  border: none;
+  color: #FFFFFF;
+  font-size: 28px;
+  width: auto;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+ 
+
+.button_shared span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button_shared span:after {
+  content: '\f1e0';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button_shared span {
+  padding-right: 25px;
+}
+
+.button_shared:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/*buton close*/
+
+.button_close {
+  border-radius: 4px;
+  background-color: #fd0d0d;
+  border: none;
+  color: #FFFFFF;
+  font-size: 28px;
+  width: auto;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+ 
+
+.button_close span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button_close span:after {
+  content: '\f00d';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button_close span {
+  padding-right: 25px;
+}
+
+.button_close:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+/*
+boton para ver pdf del informe*/
+.btn2 {
+  padding: 15px;
+  font-weight: 700;
+  font-size: 2rem;
+  text-decoration: none !important;
+  text-align: center;
+  transition: all .5s ease; 
+  border-radius: 60px;
+}
+
+.btn--doar {
+  color: #fff;
+  padding-right: 0;
+  background-color: #c0392b;
+  -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 70%, 90% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 75% 100%, 0 100%);
+  text-decoration: none !important;
+  border-radius: 8px;
+}
+
+.btn--doar:hover { 
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 100%); 
+  text-decoration: none; 
+}
+
+.btn--doar:after {
+  content: '\f15c';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  right: -55px;
+  transition: all 0.2s ease;
+}
+
+.btn--doar:hover:after {
+  margin: -5px 15px;
+  right: 0px;
+  text-decoration: none;
+}
+
+/*boton micrositio */
+.btn_ms {
+  padding: 15px;
+  font-weight: 700;
+  font-size: 2rem;
+  text-decoration: none !important;
+  text-align: center;
+  transition: all .5s ease; 
+  border-radius: 60px;
+}
+
+.btn--covid {
+  color: #fff;
+  padding-right: 0;
+  background-color: #d336cb;
+  -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 70%, 90% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 75% 100%, 0 100%);
+  text-decoration: none !important;
+  border-radius: 8px;
+}
+
+.btn--covid:hover { 
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 100%); 
+  text-decoration: none; 
+}
+
+.btn--covid:after{
+  content: '\f7f2';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  right: -55px;
+  transition: all 0.2s ease;
+}
+
+/*.btn--covid:after {
+  
+  content: url('http://127.0.0.1:8000/static/images/covid.png');
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  top: 1ex;
+  width: 50px;
+  height: 50px;
+  right: -55px;
+  transition: all 0.2s ease;
+}*/
+
+.btn--covid:hover:after {
+  margin: -5px 15px;
+  right: 0px;
+  text-decoration: none;
+}
+
+
+
+
+
+/*descripcion del eje*/
+
+
+.cont_img{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    overflow-y: scroll;
+}
+ 
+.texto-encima{
+    text-align: justify;
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    right: 25px;
+   
+}
+.centrado{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/*boton para compartir cerrar */
+
+
+/*
+input.star {
+ 
+  display: none;
+}
+
+.star {
+  color: rgba(255, 255, 255, 0);
+  text-shadow: .25px -.25px 1px #000;
+  transition: .2s ease;
+}
+
+.star:hover {
+  cursor: pointer;
+  transition: .3s ease;
+  text-shadow: -5px -6px 4px rgba(255, 142, 86, 0.6);
+}
+
+input.star:checked~label.star:hover {
+  transition: .3s ease;
+  text-shadow: -5px -6px 4px rgba(255, 142, 86, 0.6);
+}
+
+label.star::before {
+  content: "\f5c0";
+  
+  color: #e74c3c;
+  transition: all .25s;
+  font-family: 'Font Awesome 5 Free';
+  
+  font-weight: 400;
+  font-size: 32px;
+}
+
+input.star:checked~label.star::before {
+  content: '\f4d5';
+  color: #e74c3c;
+  transition: all .25s;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+*/

@@ -5,7 +5,9 @@
 <link rel="stylesheet" href="{%static 'css/base.css'%}">
 <link rel="stylesheet" href="{%static 'css/inicio.css'%}">
 <link rel="stylesheet" href="{%static 'css/dataTables.bootstrap4.css'%}">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+
 <!-- Custom styles for this template-->
 <link href="{%static 'css/sb-admin.css'%}" rel="stylesheet">
 <link href="{%static 'css/galeria.css'%}" rel="stylesheet">
@@ -23,35 +25,45 @@
 {% block supercontent %}
 
 <header class="fixed-top">
-  <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light fixe-top">
+  <nav id="nav" class="justify-content-center navbar navbar-expand-lg navbar-light bg-light fixe-top">
     <!-- Logo-Marca -->
-    <img class="navbar-brand mr-5" src="{%static 'images/2do.jpg' %}" alt="Logo" width="100px" height="75px">
+    
+    <img class="navbar-brand mr-5 d-none d-md-block" src="{%static 'images/2do.jpg' %}" alt="Logo" width="80px" height="auto" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <!-- Icono 3barras -->
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      {% for informe in informes %}
+        <a class="dropdown-item" href="{% url 'informe' inf=informe.año %}"> {{informe.nombre}} </a>
+        <div class="dropdown-divider"></div>
+      {% endfor %}
+    
+    </div>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-      aria-label="Toggle navigation" style="margin-right: 44%;">
+      aria-label="Toggle navigation" >
       <span class="navbar-toggler-icon"></span>
       </button>
-
-    
+   
     <!-- Menu links  -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mr-auto text-center">
-        <li class="nav-item nav-1 mr-5 justify-content-center "  data-toggle="tooltip" data-placement="bottom" title="Seguriad Ciudadana y Protección Civil"  {% if request.path == '/eje/1' %} style="border-bottom: 5px solid #3C5A4F;" {%endif%}>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item nav-1 "  data-toggle="tooltip" data-placement="bottom" title="Seguriad Ciudadana y Protección Civil"  {% if request.path == '/eje/1' %} style="border-bottom: 5px solid #3C5A4F;" {%endif%}>
           <a class="nav-link ml-3 mr-3" href="{% url 'Eje' idEje=1 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;1
           </a>
         </li>
-        <li class="nav-item-2 mr-5" data-toggle="tooltip" data-placement="bottom" title="Desarrollo Integral"  {% if request.path == '/eje/2' %} style="border-bottom: 5px solid #802C45;" {%endif%}>
+        <li class="nav-item-2 " data-toggle="tooltip" data-placement="bottom" title="Desarrollo Integral"  {% if request.path == '/eje/2' %} style="border-bottom: 5px solid #802C45;" {%endif%}>
           <a class="nav-link nav-2 ml-3 mr-3" href="{% url 'Eje' idEje=2 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;2</a>
         </li>
-        <li class="nav-item-3 mr-5" data-toggle="tooltip" data-placement="bottom" title="Desarrollo Social y Humano"  {% if request.path == '/eje/3' %} style="border-bottom: 5px solid #562033;" {%endif%}>
+        <li class="nav-item-3 " data-toggle="tooltip" data-placement="bottom" title="Desarrollo Social y Humano"  {% if request.path == '/eje/3' %} style="border-bottom: 5px solid #562033;" {%endif%}>
           <a class="nav-link nav-3 ml-3 mr-3" href="{% url 'Eje' idEje=3 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;3</a>
         </li>
-        <li class="nav-item-4 mr-5" data-toggle="tooltip" data-placement="bottom" title="Combate a la Corrupción y Participación Ciudadana"  {% if request.path == '/eje/4' %} style="border-bottom: 5px solid #AB905F;" {%endif%}>
+        <li class="nav-item-4 " data-toggle="tooltip" data-placement="bottom" title="Combate a la Corrupción y Participación Ciudadana"  {% if request.path == '/eje/4' %} style="border-bottom: 5px solid #AB905F;" {%endif%}>
           <a class="nav-link nav-4 ml-3 mr-3" href="{% url 'Eje' idEje=4 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;4</a>
         </li>
-        <li class="nav-item-5 mr-5" data-toggle="tooltip" data-placement="bottom" title="Promoción Económica y Medio Ambiente"  {% if request.path == '/eje/5' %} style="border-bottom: 5px solid #502F2C;" {%endif%}>
+        <li class="nav-item-5 " data-toggle="tooltip" data-placement="bottom" title="Promoción Económica y Medio Ambiente"  {% if request.path == '/eje/5' %} style="border-bottom: 5px solid #502F2C;" {%endif%}>
           <a class="nav-link nav-5 ml-3 mr-3" href="{% url 'Eje' idEje=5 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;5</a>
+        </li>
+        <li class="nav-item-5 " data-toggle="tooltip" data-placement="bottom" title="Promoción Económica y Medio Ambiente"  {% if request.path == '/covid' %} style="border-bottom: 5px solid #2e4268;" {%endif%}>
+          <a class="nav-link nav-5 ml-3 mr-3" href="{% url 'covid' %}" style="font-weight: bold">C O V I D&nbsp;&nbsp;&nbsp;&nbsp;1 9</a>
         </li>
        
       </ul>
@@ -66,22 +78,29 @@
     {% block content %}
     
     {% endblock %}
-
-    <footer class="d-flex justify-content-center align-items-center mt-5" >
+    
+    <footer class="d-flex justify-content-center align-items-center mt-5" 
+    {% if eje.decoracion %}  style="background-color:{{eje.decoracion}};" 
+    
+    {% else %}
+    style="background-color: #792018;"    
+    {%endif%}
+    >
+  
       <h6 class="small text-uppercase mb-0">Dirección de Planeación e Innovación Gubernamental © 2020 derechos reservados. <a href="https://www.ahome.gob.mx/" target="_blank">h. ayuntamiento de ahome</a>. </h6>
     </footer>
 {% endblock %}
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="{%static 'js/jquery.easing.min.js'%}"></script>
-<script src="{%static 'js/jquery.mask.min.js'%}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"> </script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script type="text/javascript"></script>
 <!--<script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>-->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
