@@ -61,8 +61,8 @@
 
 <!--Foto Principal-->
 {% if eje.video %}
-<video class="foo-2" autoplay controls  style="width: 100%; height:auto" src="{{ eje.video.url }}"</video>
-{% else %}  
+<video class="foo-2" autoplay controls  style="width: 100%; height:auto" src="{{ eje.video.url }}"></video>
+{% else %}
 <video class="foo-2" autoplay controls  style="width: 100%; height:auto" src="{% static 'images/promo.mp4' %}"></video>
 {% endif %}
 <!--Descripción del eje-->
