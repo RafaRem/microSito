@@ -23,6 +23,7 @@ class Eje(models.Model):
     estatus = models.BooleanField(verbose_name=("Estatus"), default=True)
     documento = models.FileField(blank=True, null=True)
     decoracion = models.CharField( max_length=200, null=True, verbose_name="Color base")
+    video = models.FileField(upload_to='uploads/', null= True, verbose_name="Video Promocional")
     class Meta:
         verbose_name = "eje"
         verbose_name_plural = "ejes"
@@ -155,3 +156,16 @@ class GaleriaSub(models.Model):
             return self.subeje.nombre
         else: 
             return self.especial.nombre
+            
+class Visores(models.Model):
+    titulo = models.CharField(max_length=500, verbose_name=("Titulo")) 
+    descripcion = models.TextField(verbose_name=("Descripción"))
+    mapa = models.CharField(max_length=500, verbose_name=("Mapa"))
+    link = models.CharField(max_length=800, verbose_name=("Link del Mapa")) 
+    estatus = models.BooleanField(verbose_name=("Estatus"))
+    class Meta:
+        verbose_name = "Visor"  
+        verbose_name_plural = "Visores"
+        
+    def __str__(self):
+        return self.titulo

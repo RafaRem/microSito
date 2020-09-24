@@ -47,4 +47,11 @@ class EspecialAdmin(admin.ModelAdmin):
     list_display_links=['id','nombre']
     search_fields=['nombre']
 
+class VisoresAdmin(admin.ModelAdmin):
+    list_display=['id','titulo']
+    list_display_links=['id','titulo']
+    search_fields=['titulo']
+
+admin.site.register(Visores,VisoresAdmin)
+
 admin.site.register(Especial,EspecialAdmin)

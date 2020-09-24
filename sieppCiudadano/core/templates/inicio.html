@@ -60,7 +60,11 @@
     <div class="container-fluid cont" style="width: 95%; margin-top: 7%; background-color:rgba(255, 0, 0, 0) !important; ">
 
 <!--Foto Principal-->
+{% if eje.video %}
+<video class="foo-2" autoplay controls  style="width: 100%; height:auto" src="{{ eje.video.url }}"</video>
+{% else %}  
 <video class="foo-2" autoplay controls  style="width: 100%; height:auto" src="{% static 'images/promo.mp4' %}"></video>
+{% endif %}
 <!--Descripción del eje-->
 <div class="card foo-1 mt-3" style="width:100% ">
     <img class="card-img-top" src="{{ eje.imagen.url }}" alt="Card image">
@@ -91,7 +95,9 @@ style="background-color: #792018;; width:100%; height: 20%"
 {% if descripcion %}
 <div class="cont_img mb-2" style="background-color: #ffffff;">
     <img class="d-block w-100" src="{% static 'images/Marca.jpg' %}" />
-    <div class="texto-encima" style="color: black; font-size: 250%;">Un tihkihik hlihlili ilhilhiholi uhkhlihl hihihihi ihlihlib hhklii exto es una composición de signos codificados en un sistema de escritura que forma una unidad de sentido. También es una composición de caracteres imprimibles generados por un algoritmo de cifrado que, aunque no tienen sentido para cualquier persona, sí puede ser descifrado por su destinatario original.</div>
+    <div class="texto-encima" style="color: black; font-size: 250%;">
+        {{eje.descripcion}}
+    </div>
     
 </div>
 {% endif %}

@@ -51,10 +51,12 @@ class CovidView(View):
         covid = Especial.objects.get(pk=1)
         publicaciones = PublicacionEspecial.objects.filter(especial = covid) 
         galeria = GaleriaSub.objects.filter(especial = covid)
+        visores = Visores.objects.filter(estatus=True)
         return  render(request, "covid.html",{
             'apartado': covid,
             'publicaciones': publicaciones,
             'galeria': galeria,
-            'informes': informes
+            'informes': informes,
+            'visores' : visores
         })
         
