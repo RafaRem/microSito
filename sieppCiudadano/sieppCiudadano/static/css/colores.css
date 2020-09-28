@@ -81,3 +81,24 @@ a.guinda-oscuro{
     background-color: rgb(96, 2, 12) !important;
 
 }
+
+
+.boton {
+    width: 100% !important;
+    padding: 10px 20px;
+    background-color: white;
+    color: #222!important;
+  }
+  .boton.maps{
+    width: 100% !important;
+    padding: 10px 20px;
+    background-color: #f37500; /* Color Rojo */
+    border-radius: 8px;
+    margin-right: 3px;
+    margin-bottom: 3px;
+  }
+  
+  .boton.maps:hover {
+    background-color: #31495f !important; /* Gris azulado */
+    cursor: hand !important;
+  }

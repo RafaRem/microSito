@@ -121,6 +121,7 @@ class Especial(models.Model):
     imagen = models.ImageField(verbose_name=("Imagen"))
     informe = models.ForeignKey(Informe,blank=True, null=True, on_delete=models.CASCADE, verbose_name='Informe')
     estatus = models.BooleanField(verbose_name=("Estatus"), default=True)
+    video = models.FileField(upload_to='uploads/', null= True, verbose_name="Video Promocional")
     class Meta:
         verbose_name = "Apartado Especial"
         verbose_name_plural = "Apartados Espceciales"
@@ -162,6 +163,8 @@ class Visores(models.Model):
     descripcion = models.TextField(verbose_name=("Descripción"))
     mapa = models.CharField(max_length=500, verbose_name=("Mapa"))
     link = models.CharField(max_length=800, verbose_name=("Link del Mapa")) 
+    icono = models.CharField(max_length=100, null=True, verbose_name=("Icono del bonto"))
+    color = models.CharField(max_length=100, null=True, verbose_name=("Color del bonto"))
     estatus = models.BooleanField(verbose_name=("Estatus"))
     class Meta:
         verbose_name = "Visor"  

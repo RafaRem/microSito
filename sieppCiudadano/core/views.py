@@ -1,8 +1,11 @@
+import json
 from django.shortcuts import render, HttpResponse
+from django.http import JsonResponse
 from .models import *
 from django.views.generic import  View
 from datetime import date
 from datetime import datetime
+from rest_framework.renderers import JSONRenderer
 
 # Create your views here.
   
@@ -52,11 +55,20 @@ class CovidView(View):
         publicaciones = PublicacionEspecial.objects.filter(especial = covid) 
         galeria = GaleriaSub.objects.filter(especial = covid)
         visores = Visores.objects.filter(estatus=True)
+        arrayvisores= []
+        for visor in visores:
+            arrayvisores.append({
+                'titulo': visor.titulo,
+                'mapa': visor.mapa,
+                'icono': visor.icono,
+                'color': visor.color
+            }) 
+        arrayvisores = json.dumps(arrayvisores)
         return  render(request, "covid.html",{
             'apartado': covid,
             'publicaciones': publicaciones,
             'galeria': galeria,
             'informes': informes,
-            'visores' : visores
+            'visores' : arrayvisores
         })
         
