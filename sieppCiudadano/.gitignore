@@ -1,0 +1,14 @@
+*.pyc
+__pycache__
+myvenv
+.vscode/
+db.sqlite3
+.env
+*.jpg
+*.jpeg
+*.png
+*.gif
+media/*
+!static/images/*
+/static/
+sieppCiudadano/sieppCiudadano/settings.txt

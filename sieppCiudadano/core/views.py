@@ -1,7 +1,9 @@
 import json
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render,  redirect,HttpResponse
 from django.http import JsonResponse
 from .models import *
+from django.urls import reverse
+
 from django.views.generic import  View
 from datetime import date
 from datetime import datetime
@@ -12,10 +14,15 @@ from rest_framework.renderers import JSONRenderer
 class notasView(View):
     def get(self,request,inf=0):
         array=[]
+        print("entre aqui")
         informes = Informe.objects.filter(estatus = True )
         if inf == 0:
+
             fecha = date.today()
             inf = Informe.objects.get(año= fecha.year)
+            url = reverse('covid')#args=(programaOperativo.id,)
+            return redirect(url)
+
         else:
             inf = Informe.objects.get(año = inf)
         ejes = Eje.objects.filter(informe = inf, estatus = True)

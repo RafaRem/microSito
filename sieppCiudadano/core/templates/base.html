@@ -46,25 +46,26 @@
     <!-- Menu links  -->
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item nav-1 "  data-toggle="tooltip" data-placement="bottom" title="Seguriad Ciudadana y Protección Civil"  {% if request.path == '/eje/1' %} style="border-bottom: 5px solid #3C5A4F;" {%endif%}>
-          <a class="nav-link ml-3 mr-3" href="{% url 'Eje' idEje=1 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;1
+        <li class="nav-item nav-1 "  data-toggle="tooltip" data-placement="bottom" title="Desarrollo Social y Humano"  {% if request.path == '/eje/1' %} style="border-bottom: 5px solid #3C5A4F;" {%endif%}>
+          <a class="btn nav-link ml-3 mr-3" href="{% url 'Eje' idEje=1 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;1
           </a>
         </li>
-        <li class="nav-item-2 " data-toggle="tooltip" data-placement="bottom" title="Desarrollo Integral"  {% if request.path == '/eje/2' %} style="border-bottom: 5px solid #802C45;" {%endif%}>
-          <a class="nav-link nav-2 ml-3 mr-3" href="{% url 'Eje' idEje=2 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;2</a>
+        <li class="nav-item-5 " data-toggle="tooltip" data-placement="bottom" title="Covid 19"  {% if request.path == '/covid' %} style="border-bottom: 5px solid #2e4268;" {%endif%}>
+          <a class="btn nav-link nav-5 ml-3 mr-3" href="{% url 'covid' %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;2</a>
         </li>
-        <li class="nav-item-3 " data-toggle="tooltip" data-placement="bottom" title="Desarrollo Social y Humano"  {% if request.path == '/eje/3' %} style="border-bottom: 5px solid #562033;" {%endif%}>
-          <a class="nav-link nav-3 ml-3 mr-3" href="{% url 'Eje' idEje=3 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;3</a>
+        <li class="nav-item-2 " data-toggle="tooltip" data-placement="bottom" title="Seguridad Ciudadana y Protección Civil"  {% if request.path == '/eje/2' %} style="border-bottom: 5px solid #802C45;" {%endif%}>
+          <a class="btn nav-link nav-2 ml-3 mr-3" href="{% url 'Eje' idEje=2 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;3</a>
+        </li>
+        <li class="nav-item-3 " data-toggle="tooltip" data-placement="bottom" title="Promoción Económica y Medio Ambiente"  {% if request.path == '/eje/3' %} style="border-bottom: 5px solid #562033;" {%endif%}>
+          <a class="btn nav-link nav-3 ml-3 mr-3" href="{% url 'Eje' idEje=3 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;4</a>
         </li>
         <li class="nav-item-4 " data-toggle="tooltip" data-placement="bottom" title="Combate a la Corrupción y Participación Ciudadana"  {% if request.path == '/eje/4' %} style="border-bottom: 5px solid #AB905F;" {%endif%}>
-          <a class="nav-link nav-4 ml-3 mr-3" href="{% url 'Eje' idEje=4 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;4</a>
+          <a class="btn nav-link nav-4 ml-3 mr-3" href="{% url 'Eje' idEje=4 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;5</a>
         </li>
-        <li class="nav-item-5 " data-toggle="tooltip" data-placement="bottom" title="Promoción Económica y Medio Ambiente"  {% if request.path == '/eje/5' %} style="border-bottom: 5px solid #502F2C;" {%endif%}>
-          <a class="nav-link nav-5 ml-3 mr-3" href="{% url 'Eje' idEje=5 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;5</a>
+        <li class="nav-item-5 " data-toggle="tooltip" data-placement="bottom" title="Desarrollo Integral"  {% if request.path == '/eje/5' %} style="border-bottom: 5px solid #502F2C;" {%endif%}>
+          <a class="btn nav-link nav-5 ml-3 mr-3" href="{% url 'Eje' idEje=5 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;6</a>
         </li>
-        <li class="nav-item-5 " data-toggle="tooltip" data-placement="bottom" title="Promoción Económica y Medio Ambiente"  {% if request.path == '/covid' %} style="border-bottom: 5px solid #2e4268;" {%endif%}>
-          <a class="nav-link nav-5 ml-3 mr-3" href="{% url 'covid' %}" style="font-weight: bold">C O V I D&nbsp;&nbsp;&nbsp;&nbsp;1 9</a>
-        </li>
+        
        
       </ul>
 

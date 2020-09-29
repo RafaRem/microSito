@@ -16,6 +16,7 @@ class Informe(models.Model):
 # Create your models here.
 class Eje(models.Model):
     nombre = models.CharField(  max_length=200, verbose_name="Nombre del Eje")
+    titulo = models.CharField(  max_length=200,null=True, verbose_name="Titulo")
     numero = models.CharField(  max_length=200, verbose_name="Número")
     descripcion = models.TextField(verbose_name=("Descripción"))
     imagen = models.ImageField(verbose_name=("Imagen"))
