@@ -20,7 +20,7 @@
 <style type="text/css"> div{  font-family: 'Montserrat', arial; } </style>
 <style>
     body{
-            background:  url("https://img.freepik.com/vector-gratis/coronavirus-futurista-plantilla-banner-web-covid-19-celulas-brillantes-virus-poligonales-bajos_67515-901.jpg?size=626&ext=jpg") no-repeat center center fixed !important;
+            background: url("https://img.freepik.com/vector-gratis/coronavirus-futurista-plantilla-banner-web-covid-19-celulas-brillantes-virus-poligonales-bajos_67515-901.jpg?size=626&ext=jpg") no-repeat center center fixed !important;
             -webkit-background-size: cover !important;
             -moz-background-size: cover !important;
             -o-background-size: cover !important;
@@ -41,7 +41,10 @@
 
 {% block content %}
 <!--Periodo de Gobierno-->
-<body class="justify-content-center text-center">
+<body class="justify-content-center text-center" style="background: url('{{ apartado.imagen.url }}') no-repeat center center fixed !important;-webkit-background-size: cover !important;
+-moz-background-size: cover !important;
+-o-background-size: cover !important;
+background-size: cover !important;">
     <div class="container cont" style="width: 90%; margin-top: 7%; background-color:rgba(255, 0, 0, 0) !important; ">
         
         <!--Foto Principal-->
@@ -52,29 +55,13 @@
 {% endif %}
         <!--Descripción del eje-->
         <div class="card foo-1 mt-5" style="width:100% ">
-            <img class="card-img-top" src="{{ apartado.imagen.url }}" alt="Card image">
+            <img class="card-img-top" src="{{eje.imagen.url }}" alt="Card image">
             <div class="col card-img-overlay" style="margin-top: 20%;">
             </div>
         </div>
+             
        
-      <!--Mapas Visores-->  
-        <div class=" mt-3 mb-3">
-            <div class="container-fluid justify-content-center mb-3" style="background-color: #AB905F; height: 50px; color:white; font-size: 35px;"> Mapas Visores </div>
-            <div class="row">
-                <div id="mapButon" class="col-md-4">                    
-                    
-                </div>
-                <div class="col-md-8">
-                    <div class="mapaTitle container-fluid justify-content-center" style="background-color: #AB905F; height: 25px; color:white; font-size: 15px;"></div> <br>
-                    <div id="map"></div>    
-                </div>
-            </div>
-        </div>
-       
-            
-        
-       
-        {% for publicacion in publicaciones %}
+        {% for publicacion in temas %}
         <div class="card mt-3" style="width:100% ">
             <img class="card-img-top " src="{{ publicacion.imagen.url }}" alt="Card image">
             <div class="col card-img-overlay" >
@@ -125,8 +112,22 @@
         
         </div>
         
+    </div>
+  <!--Mapas Visores-->  
+  <div class=" mt-3 mb-3">
+    <div class="container-fluid justify-content-center mb-3" style="background-color: #AB905F; height: 50px; color:white; font-size: 35px;"> Mapas Visores </div>
+    <div class="row">
+        <div id="mapButon" class="col-md-4">                    
+            
+        </div>
+        <div class="col-md-8">
+            <div class="mapaTitle container-fluid justify-content-center" style="background-color: #AB905F; height: 25px; color:white; font-size: 15px;"></div> <br>
+            <div id="map"></div>    
         </div>
     </div>
+</div>
+   
+</div>
 </body>
 
 <!--Foto Principal-->

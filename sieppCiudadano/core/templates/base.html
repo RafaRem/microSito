@@ -46,10 +46,13 @@
     <!-- Menu links  -->
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item nav-1 "  data-toggle="tooltip" data-placement="bottom" title="Desarrollo Social y Humano"  {% if request.path == '/eje/1' %} style="border-bottom: 5px solid #3C5A4F;" {%endif%}>
-          <a class="btn nav-link ml-3 mr-3" href="{% url 'Eje' idEje=1 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;1
-          </a>
-        </li>
+        {% for ejeNav in ejes %}
+          <li class="nav-item-{{ejeNav.numero}} nav-1 "  data-toggle="tooltip" data-placement="bottom" title="{{ejeNav.nombre}}"  {% if eje.numero == ejeNav.numero  %} style="border-bottom: 5px solid {{ejeNav.decoracion}};" {%endif%}>
+            <a class="btn nav-link ml-3 mr-3" href="{% url 'Eje' idEje=ejeNav.numero %}" style="font-weight: bold">{{ejeNav.titulo}}
+            </a>
+          </li>
+        {% endfor %}
+        <!--
         <li class="nav-item-5 " data-toggle="tooltip" data-placement="bottom" title="Covid 19"  {% if request.path == '/covid' %} style="border-bottom: 5px solid #2e4268;" {%endif%}>
           <a class="btn nav-link nav-5 ml-3 mr-3" href="{% url 'covid' %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;2</a>
         </li>
@@ -65,7 +68,7 @@
         <li class="nav-item-5 " data-toggle="tooltip" data-placement="bottom" title="Desarrollo Integral"  {% if request.path == '/eje/5' %} style="border-bottom: 5px solid #502F2C;" {%endif%}>
           <a class="btn nav-link nav-5 ml-3 mr-3" href="{% url 'Eje' idEje=5 %}" style="font-weight: bold">E J E&nbsp;&nbsp;&nbsp;&nbsp;6</a>
         </li>
-        
+        -->
        
       </ul>
 

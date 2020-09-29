@@ -1,6 +1,4 @@
-
-  .nav-item:hover{
-     
+.nav-item-1:hover{
     background: #3C5A4F !important;
     border-radius: 60px;
 }
@@ -18,24 +16,29 @@ nav div ul li a:hover{
     color:#DBD6CE !important;
 }
 
-.nav-item-2:hover{
+.nav-item-3:hover{
     background: #802C45;
     border-radius: 60px;
   
 }
-.nav-item-3:hover{
+.nav-item-4:hover{
     background: #562033;
     border-radius: 60px;
  
 }
-.nav-item-4:hover{
+.nav-item-5:hover{
     background: #AB905F;
     border-radius: 60px;
  
 }
-.nav-item-5:hover{
+.nav-item-6:hover{
     background: #502F2C;
     border-radius: 60px;
+}
+
+.nav-item-2:hover{
+  background: #695482;
+  border-radius: 60px;
 }
 nav div ul li:active{
     color: rgb(250, 248, 248);

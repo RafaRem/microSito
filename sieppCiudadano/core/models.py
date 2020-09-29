@@ -6,6 +6,7 @@ class Informe(models.Model):
     estatus = models.BooleanField(verbose_name=("Estatus"))
     documento = models.FileField(blank=True, null=True)
     decoracion = models.CharField( max_length=200, null=True, verbose_name="Color Principal del Informe") 
+    principal = models.CharField(max_length=500, null=True, verbose_name="Eje que se mostrara primero")
     class Meta:
         verbose_name = "informe"  
         verbose_name_plural = "informes"

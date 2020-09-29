@@ -17,15 +17,14 @@ class notasView(View):
         print("entre aqui")
         informes = Informe.objects.filter(estatus = True )
         if inf == 0:
-
             fecha = date.today()
             inf = Informe.objects.get(año= fecha.year)
-            url = reverse('covid')#args=(programaOperativo.id,)
+            url = reverse('Eje', args=(inf.principal))
             return redirect(url)
-
         else:
             inf = Informe.objects.get(año = inf)
         ejes = Eje.objects.filter(informe = inf, estatus = True)
+        ejes = ejes.order_by('numero')
         return  render(request, "inicio.html",{
         'informes': informes,
         'eje': inf,
@@ -40,12 +39,39 @@ class notasView(View):
 class EjeView(View):
     def get(self,request, idEje):
         array=[]
-        eje = Eje.objects.get(pk =idEje,
+        eje = Eje.objects.get(numero =idEje,
         )
+        fecha = date.today()
+        inf = Informe.objects.get(año= fecha.year)
         galeria = GaleriaSub.objects.filter(subeje = eje)
         publicaciones = Publicacion.objects.filter(eje = eje)
         informes = Informe.objects.filter(estatus = True )
+        ejes = Eje.objects.filter(informe = inf, estatus = True)
+        ejes = ejes.order_by('numero')
+        if eje.numero == '2':
+            visores = Visores.objects.filter(estatus=True)
+            arrayvisores= []
+            for visor in visores:
+                arrayvisores.append({
+                    'titulo': visor.titulo,
+                    'mapa': visor.mapa,
+                    'icono': visor.icono,
+                    'color': visor.color
+                }) 
+            arrayvisores = json.dumps(arrayvisores)
+            return  render(request, "covid.html",{
+            'eje': eje,
+            'ejes': ejes,
+            'temas': publicaciones,
+            'id': idEje,
+            'galeria': galeria,
+            'informes': informes,
+            'visores' : arrayvisores
+            })
+
+
         return  render(request, "inicio.html",{
+        'ejes': ejes,
         'eje': eje,
         'id': idEje,
         'galeria': galeria,
