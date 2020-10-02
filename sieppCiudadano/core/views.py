@@ -49,7 +49,8 @@ class EjeView(View):
         informes = Informe.objects.filter(estatus = True )
         ejes = Eje.objects.filter(informe = inf, estatus = True)
         ejes = ejes.order_by('numero')
-        if eje.numero == '2' and inf.año == 2020:
+        print(inf.año)
+        if eje.numero == '2' and inf.año == '2020':
             visores = Visores.objects.filter(estatus=True)
             arrayvisores= []
             for visor in visores:
