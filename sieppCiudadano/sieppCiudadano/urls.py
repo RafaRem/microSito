@@ -20,10 +20,9 @@ from django.conf import settings
 from core.views  import *
 
 urlpatterns = [
+    url(r'^4zZ1245gHHjUytzcvVB/', admin.site.urls),
     path('', include('core.urls')),
-    path('sieppCiudadano/loginHomeG', admin.site.urls),
-    url(r'^.*/$', notasView.as_view(), name="inicios")
-
+    
 ]
 
 if settings.DEBUG:
