@@ -40,7 +40,10 @@ class notasView(View):
 class EjeView(View):
     def get(self,request, idEje):
         array=[]
-        eje = Eje.objects.get(numero =idEje,
+        if not idEje.isnumeric():
+            print("si es")
+            return  render(request, "404.html")
+        eje = Eje.objects.get(numero = idEje,
         )
         fecha = date.today()
         inf = Informe.objects.get(año= fecha.year)
@@ -49,17 +52,17 @@ class EjeView(View):
         informes = Informe.objects.filter(estatus = True )
         ejes = Eje.objects.filter(informe = inf, estatus = True)
         ejes = ejes.order_by('numero')
-        print(inf.año)
+        visores = Visores.objects.filter(estatus=True, eje=eje)
+        arrayvisores= []
+        for visor in visores:
+            arrayvisores.append({
+                'titulo': visor.titulo,
+                'mapa': visor.mapa,
+                'icono': visor.icono,
+                'color': visor.color
+            }) 
         if eje.numero == '2' and inf.año == '2020':
-            visores = Visores.objects.filter(estatus=True)
-            arrayvisores= []
-            for visor in visores:
-                arrayvisores.append({
-                    'titulo': visor.titulo,
-                    'mapa': visor.mapa,
-                    'icono': visor.icono,
-                    'color': visor.color
-                }) 
+            
             arrayvisores = json.dumps(arrayvisores)
             return  render(request, "covid.html",{
             'eje': eje,
@@ -79,7 +82,8 @@ class EjeView(View):
         'galeria': galeria,
         'temas':publicaciones,
         'descripcion':True,
-        'informes': informes
+        'informes': informes,
+        'visores' : arrayvisores
         })
 
 class CovidView(View):

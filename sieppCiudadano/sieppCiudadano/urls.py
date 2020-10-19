@@ -15,11 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url,include
 from django.conf import settings
+from core.views  import *
 
 urlpatterns = [
     path('', include('core.urls')),
-    path('admin/', admin.site.urls),
+    path('sieppCiudadano/loginHomeG', admin.site.urls),
+    url(r'^.*/$', notasView.as_view(), name="inicios")
+
 ]
 
 if settings.DEBUG:
