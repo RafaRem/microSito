@@ -41,7 +41,6 @@ class EjeView(View):
     def get(self,request, idEje):
         array=[]
         if not idEje.isnumeric():
-            print("si es")
             return  render(request, "404.html")
         eje = Eje.objects.get(numero = idEje,
         )
