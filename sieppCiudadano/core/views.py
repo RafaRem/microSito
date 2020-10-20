@@ -73,7 +73,7 @@ class EjeView(View):
             'visores' : arrayvisores
             })
 
-
+        arrayvisores = json.dumps(arrayvisores)
         return  render(request, "inicio.html",{
         'ejes': ejes,
         'eje': eje,
