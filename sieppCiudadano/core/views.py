@@ -60,19 +60,7 @@ class EjeView(View):
                 'icono': visor.icono,
                 'color': visor.color
             }) 
-        if eje.numero == '2' and inf.año == '2020':
-            
-            arrayvisores = json.dumps(arrayvisores)
-            return  render(request, "covid.html",{
-            'eje': eje,
-            'ejes': ejes,
-            'temas': publicaciones,
-            'id': idEje,
-            'galeria': galeria,
-            'informes': informes,
-            'visores' : arrayvisores
-            })
-
+        
         arrayvisores = json.dumps(arrayvisores)
         return  render(request, "inicio.html",{
         'ejes': ejes,
