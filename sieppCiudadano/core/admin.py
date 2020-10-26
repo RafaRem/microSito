@@ -28,6 +28,14 @@ class GaleriaAdmin(admin.ModelAdmin):
 admin.site.register(GaleriaSub,GaleriaAdmin)
 
 
+class GaleriaInfAdmin(admin.ModelAdmin):
+    list_display=['id', 'informe']
+    list_display_links=['id']
+    
+
+admin.site.register(GaleriaInf,GaleriaInfAdmin)
+
+
 class PublicacionAdmin(admin.ModelAdmin):
     list_display=['id','titulo', 'eje']
     list_display_links=['id','titulo']

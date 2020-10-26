@@ -19,14 +19,18 @@ class notasView(View):
         if inf == 0:
             fecha = date.today()
             inf = Informe.objects.get(año= fecha.year)
+            galeria = GaleriaInf.objects.filter(informe= inf)
             if int(inf.principal) > 0:
                 url = reverse('Eje', args=(inf.principal))
                 return redirect(url)
         else:
             inf = Informe.objects.get(año = inf)
+            galeria = GaleriaInf.objects.filter(informe= inf)
+        print(galeria)  
         ejes = Eje.objects.filter(informe = inf, estatus = True)
         ejes = ejes.order_by('numero')
         return  render(request, "inicio.html",{
+        'galeria': galeria,
         'informes': informes,
         'eje': inf,
         'descripcion':False,

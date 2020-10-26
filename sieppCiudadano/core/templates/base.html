@@ -33,7 +33,7 @@
   <nav id="nav" class="justify-content-center navbar navbar-expand-lg navbar-light bg-light fixe-top">
     <!-- Logo-Marca -->
     
-    <img class="navbar-brand mr-5 d-none d-md-block" src="{%static 'images/2do.jpg' %}" alt="Logo" width="80px" height="auto" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a class="mr-5 d-none d-md-block" href="/"><img class="navbar-brand mr-5 d-none d-md-block" src="{%static 'images/2do.png' %}" alt="Logo" width="80px" height="auto" id="navbarDropdown"></a><!-- role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
     <!-- Icono 3barras -->
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
       {% for informe in informes %}
@@ -92,7 +92,7 @@
     {% if eje.decoracion %}  style="background-color:'{{eje.decoracion}}';" 
     
     {% else %}
-    style="background-color: #792018;"    
+    style="background-color: #336666;"    
     {%endif%}
     >
   

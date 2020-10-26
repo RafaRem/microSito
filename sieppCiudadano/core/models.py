@@ -159,6 +159,20 @@ class GaleriaSub(models.Model):
             return self.subeje.nombre
         else: 
             return self.especial.nombre
+
+class GaleriaInf(models.Model):
+    informe = models.ForeignKey(Informe,blank=True, null=True, on_delete=models.CASCADE, verbose_name='Informe')
+    imagen = models.ImageField(verbose_name=("Imagen"))
+    estatus = models.BooleanField(verbose_name=("Estatus"))
+    class Meta:
+        verbose_name = "foto informe"
+        verbose_name_plural = "fotos informe"
+        
+    def __str__(self):
+        if self.informe.nombre:
+            return self.informe.nombre
+        else: 
+            return self.informe
             
 class Visores(models.Model):
     titulo = models.CharField(max_length=500, verbose_name=("Titulo")) 
