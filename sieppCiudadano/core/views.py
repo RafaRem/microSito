@@ -14,7 +14,6 @@ from rest_framework.renderers import JSONRenderer
 class notasView(View):
     def get(self,request,inf=0):
         array=[]
-        print("entre aqui")
         informes = Informe.objects.filter(estatus = True )
         if inf == 0:
             fecha = date.today()
@@ -26,20 +25,8 @@ class notasView(View):
         else:
             inf = Informe.objects.get(año = inf)
             galeria = GaleriaInf.objects.filter(informe= inf)
-        print(galeria)  
         ejes = Eje.objects.filter(informe = inf, estatus = True)
         ejes = ejes.order_by('numero')
-        '''se hara una nueva ordenación para que covid aparaesca al ultimo en la lista de ejes'''
-        order =[]
-        for eje in ejes:
-            print(eje.numero)
-            if eje.numero != "2":
-                order.append(eje)
-            else:
-                covid = eje
-                print(covid)
-        order.append(covid)
-        ejes = order
         return  render(request, "inicio.html",{
         'galeria': galeria,
         'informes': informes,
@@ -66,18 +53,6 @@ class EjeView(View):
         informes = Informe.objects.filter(estatus = True )
         ejes = Eje.objects.filter(informe = inf, estatus = True)
         ejes = ejes.order_by('numero')
-        '''se hara una nueva ordenación para que covid aparaesca al ultimo en la lista de ejes'''
-        order =[]
-
-        for eje in ejes:
-            print(eje.numero)
-            if eje.numero != "2":
-                order.append(eje)
-            else:
-                covid = eje
-                print(covid)
-        order.append(covid)
-        ejes = order
         visores = Visores.objects.filter(estatus=True, eje=eje)
         arrayvisores= []
         for visor in visores:
