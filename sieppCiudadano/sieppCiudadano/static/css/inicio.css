@@ -329,7 +329,7 @@ boton para ver pdf del informe*/
     position: relative;
     display: inline-block;
     text-align: center;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
 }
  
 .texto-encima{
