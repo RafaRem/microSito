@@ -273,8 +273,8 @@ cursor:pointer; cursor: hand;
     {% for itemEje in ejes %}
     <div class="col-sm-12 mt-3">
       <div class="card">
+        <h5 class="card-header text-center" style="background-color: {{itemEje.decoracion}}; border:none; color: white;">{{itemEje.nombre}}</h5>
         <div class="card-body">
-          <h5 class="card-title">{{itemEje.nombre}}</h5>
           <p class="card-text text-justify">{{itemEje.descripcion}}</p>
           <a href="#" class="btn btn-primary linkbtn" style="background-color: {{itemEje.decoracion}}; border:none; text-align: justify !important;">Ver eje <i class="fas fa-external-link-alt"></i></a>
         </div>
