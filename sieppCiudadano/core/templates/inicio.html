@@ -33,12 +33,14 @@
     .cont{
         margin-top: 30% !important;
     }
-
-
     .texto-encima{
-        font-size: 150% !important;
+        font-size: 130% !important;
     }
+    .cont_img{
 
+        overflow-y: scroll !important;
+        margin-bottom: 15px;
+    }
 
 }
 
@@ -57,6 +59,13 @@ color: black !important;
 background-color: white !important;
 cursor:pointer; cursor: hand;	
 
+}
+
+.linkbtn:hover{
+    border: #d3ab3e 2px solid !important;
+    color: black !important;
+    background-color: white !important;
+    cursor:pointer; cursor: hand;	
 }
 
 .addmap{
@@ -259,6 +268,22 @@ cursor:pointer; cursor: hand;
 </div>
 </div>
 {% endif %}
+{% if informe %}
+<div class="row">
+    {% for itemEje in ejes %}
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{itemEje.nombre}}</h5>
+          <p class="card-text text-justify">{{itemEje.descripcion}}</p>
+          <a href="#" class="btn btn-primary linkbtn" style="background-color: {{itemEje.decoracion}}; border:none; text-align: justify !important;">Ver eje <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
 </div> 
 </div>
 </body>

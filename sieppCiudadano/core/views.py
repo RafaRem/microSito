@@ -37,6 +37,7 @@ class notasView(View):
             ordenar.append(covid)
         ejes = ordenar
         return  render(request, "inicio.html",{
+        'informe': True,    
         'galeria': galeria,
         'informes': informes,
         'eje': inf,
