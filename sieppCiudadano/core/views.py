@@ -27,6 +27,15 @@ class notasView(View):
             galeria = GaleriaInf.objects.filter(informe= inf)
         ejes = Eje.objects.filter(informe = inf, estatus = True)
         ejes = ejes.order_by('numero')
+        ordenar = []
+        for ed in ejes:
+            if ed.numero != "2":
+                ordenar.append(ed)
+            else:
+                covid = ed
+        if covid:
+            ordenar.append(covid)
+        ejes = ordenar
         return  render(request, "inicio.html",{
         'galeria': galeria,
         'informes': informes,
@@ -53,6 +62,15 @@ class EjeView(View):
         informes = Informe.objects.filter(estatus = True )
         ejes = Eje.objects.filter(informe = inf, estatus = True)
         ejes = ejes.order_by('numero')
+        ordenar = []
+        for ed in ejes:
+            if ed.numero != "2":
+                ordenar.append(ed)
+            else:
+                covid = ed
+        if covid:
+            ordenar.append(covid)
+        ejes = ordenar
         visores = Visores.objects.filter(estatus=True, eje=eje)
         arrayvisores= []
         for visor in visores:
