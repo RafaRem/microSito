@@ -70,13 +70,25 @@ cursor:pointer; cursor: hand;
 <!--Periodo de Gobierno-->
 <body class="justify-content-center text-center">
     <div class="container-fluid cont" style="width: 95%; margin-top: 7%; background-color:rgba(255, 0, 0, 0) !important; ">
-
-<!--Foto Principal-->
+{% if request.path == '/eje/1' %}  <iframe style="width: 100%; height:500px"  src="https://www.youtube.com/embed/hv7R2d4uChE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% elif  request.path == '/eje/2' %}   <iframe style="width: 100%; height:500px" src="https://www.youtube.com/embed/INtGcBWOllg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% elif  request.path == '/eje/3' %}  <iframe style="width: 100%; height:500px" src="https://www.youtube.com/embed/hv7R2d4uChE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% elif  request.path == '/eje/4' %}  <iframe style="width: 100%; height:500px" src="https://www.youtube.com/embed/hv7R2d4uChE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% elif  request.path == '/eje/5' %}  <iframe style="width: 100%; height:500px" src="https://www.youtube.com/embed/hv7R2d4uChE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% elif  request.path == '/eje/6' %}  <iframe style="width: 100%; height:500px" src="https://www.youtube.com/embed/hv7R2d4uChE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+{% else %}
+<iframe style="width: 100%; height:500px" src="https://www.youtube.com/embed/hv7R2d4uChE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+{%endif%}
+       
+<!-- Aqui Va el Video-->
+<!--Foto Principal
 {% if eje.video %}
 <video class="foo-2" autoplay controls  style="width: 100%; height:auto" src="{{ eje.video.url }}"></video>
 {% else %}
 <video class="foo-2" autoplay controls  style="width: 100%; height:auto" src="{% static 'images/promo.mp4' %}"></video>
-{% endif %}
+{% endif %}-->
+
+
 <!--Descripción del eje-->
 <div class="card foo-1 mt-3" style="width:100% ">
     <img class="card-img-top" src="{{ eje.imagen.url }}" alt="Card image">
