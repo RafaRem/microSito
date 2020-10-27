@@ -59,6 +59,7 @@ class EjeView(View):
         arrayvisores= []
         for visor in visores:
             arrayvisores.append({
+                'eje': eje.numero,
                 'titulo': visor.titulo,
                 'mapa': visor.mapa,
                 'icono': visor.icono,
