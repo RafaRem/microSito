@@ -221,7 +221,7 @@ max-width: 75%;
 boton para ver pdf del informe*/
 .btn2 {
   padding: 15px;
-  font-weight: 700;
+  /*font-weight: 700;*/
   font-size: 2rem;
   text-decoration: none !important;
   text-align: center;
@@ -292,7 +292,7 @@ boton para ver pdf del informe*/
 .btn--covid:after{
   content: '\f7f2';
   font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
+  /*font-weight: 900;*/
   text-decoration: none;
   display: inline-block;
   position: relative;
