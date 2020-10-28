@@ -33,7 +33,7 @@
   <nav id="nav" class="justify-content-center navbar navbar-expand-lg navbar-light bg-light fixe-top">
     <!-- Logo-Marca -->
     
-    <a class="mr-5 d-none d-md-block" href="/"><img class="navbar-brand mr-5 " src="{%static 'images/2do.png' %}" alt="Logo" width="80px" height="auto" id="navbarDropdown"></a><!-- role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+    <a class="mr-5 d-none d-md-block" href="/"><img class="navbar-brand mr-5 d-none d-md-block" src="{%static 'images/2do.png' %}" alt="Logo" width="80px" height="auto" id="navbarDropdown"></a><!-- role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
     <!-- Icono 3barras -->
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
       {% for informe in informes %}
@@ -79,7 +79,7 @@
       </ul>
       
     </div>
-    <a class="ml-5 mr-3" href="https://www.ahome.gob.mx/"><img src="{% static 'images/logo_ahome.png' %}" width="120px" height="auto" alt=""></a> 
+    <a class="ml-5 mr-3" href=""><img src="{% static 'images/logo_ahome.png' %}" width="120px" height="auto" alt=""></a> 
   </nav>
   </header>
     {# Important content stuff here #}
