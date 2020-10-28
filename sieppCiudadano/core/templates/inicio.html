@@ -130,13 +130,23 @@ cursor:pointer; cursor: hand;
 
 <!--Carrucel de Eje-->
 {% if descripcion %}
+<div class="row mb-5">
+    <div class="col-sm-12 mt-3">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text text-justify">{{eje.descripcion}}</p>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- '''Texto sobre imagen'''
 <div class="cont_img mb-2" style="background-color: #ffffff;">
     <img class="d-block w-100" src="{% static 'images/texto.png' %}" />
     <div class="texto-encima" style="color: black; font-size: 100%;">
         {{eje.descripcion}}
     </div>
     
-</div>
+</div>-->
 {% endif %}
 {% if temas %}
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
