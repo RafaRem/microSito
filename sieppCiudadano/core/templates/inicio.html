@@ -42,6 +42,8 @@
         margin-bottom: 15px;
     }
 
+   
+
 }
 
 @media (max-width: 600px) { 
@@ -116,10 +118,10 @@ cursor:pointer; cursor: hand;
             
         </div>
 </div>
-
-<div class="container-fluid text-center" style="width:100%; height: 10%; " >
+{% if not informe %}
+<div class="container-fluid text-center nombreEje" style="width:100%; height: 10%; " >
     <div class="row justify-content-center mt-5">
-        <div class="col mt-3 " style="background-color: {{eje.decoracion}};  height: 50px; color:white; border-radius: 8px;">
+        <div class="col mt-3 " style="background-color: {{eje.decoracion}};  height: auto; color:white; border-radius: 8px;">
             <div>
                 <h3>{{eje.nombre}}</h3>
             </div>
@@ -127,6 +129,13 @@ cursor:pointer; cursor: hand;
         
     </div>
 </div>
+{% else %}
+<div class="row justify-content-center mt-5"></div>
+<div class="col mt-3 " style="  height: auto; border-radius: 8px;">
+    <h2>Contenido</h2>
+</div>
+</div>
+{% endif %}
 
 <!--Carrucel de Eje-->
 {% if descripcion %}
@@ -253,12 +262,12 @@ cursor:pointer; cursor: hand;
         </div>
         <div class="col-md-8">
             <div class="mapaTitle container-fluid justify-content-center" 
-            {% if request.path == '/eje/1' %}  style="background-color: #9C4770; height: 25px; color:white; font-size: 15px; border-radius: 8px;" 
-            {% elif  request.path == '/eje/2' %}  style="background-color: #9F8062;  height: 25px; color:white; font-size: 15px; border-radius: 8px;" 
-            {% elif  request.path == '/eje/3' %}  style="background-color: #A2A286;  height: 25px; color:white; font-size: 15px; border-radius: 8px;" 
-            {% elif  request.path == '/eje/4' %}  style="background-color: #81524E; height: 25px; color:white; font-size: 15px; border-radius: 8px;"  
-            {% elif  request.path == '/eje/5' %}  style="background-color: #5E2551; height: 25px; color:white; font-size: 15px; border-radius: 8px;" 
-            {% elif  request.path == '/eje/6' %}  style="background-color:#748280; height: 25px; color:white; font-size: 15px; border-radius: 8px;" 
+            {% if request.path == '/eje/1' %}  style="color: #9C4770; height: 25px; font-size: 15px; border-radius: 8px;" 
+            {% elif  request.path == '/eje/2' %}  style="color: #9F8062;  height: 25px;  font-size: 15px; border-radius: 8px;" 
+            {% elif  request.path == '/eje/3' %}  style="color: #A2A286;  height: 25px; font-size: 15px; border-radius: 8px;" 
+            {% elif  request.path == '/eje/4' %}  style="color: #81524E; height: 25px;  font-size: 15px; border-radius: 8px;"  
+            {% elif  request.path == '/eje/5' %}  style="color: #5E2551; height: 25px;  font-size: 15px; border-radius: 8px;" 
+            {% elif  request.path == '/eje/6' %}  style="color:#748280; height: 25px;  font-size: 15px; border-radius: 8px;" 
             {% else %}
             style="background-color: #405B50; height: 25px; color:white; font-size: 15px; border-radius: 8px;"    
             {%endif%}></div> <br>
@@ -281,20 +290,24 @@ cursor:pointer; cursor: hand;
 </div>
 {% endif %}
 {% if informe %}
-<div class="row">
+<div class="row mb-5">
     {% for itemEje in ejes %}
+    
     <div class="col-sm-12 mt-3">
       <div class="card">
         <h5 class="card-header text-center" style="background-color: {{itemEje.decoracion}}; border:none; color: white;">{{itemEje.nombre}}</h5>
-        <div class="card-body">
+        <div class="card-body text-start">
           <p class="card-text text-justify">{{itemEje.descripcion}}</p>
-          <a href="{% url 'Eje' idEje=itemEje.numero %}" class="btn btn-primary linkbtn" style="background-color: {{itemEje.decoracion}}; border:none; text-align: justify !important;">Ver eje <i class="fas fa-external-link-alt"></i></a>
+          <a href="{% url 'Eje' idEje=itemEje.numero %}" class="btn btn-primary linkbtn" style="background-color: {{itemEje.decoracion}}; border:none; ">Ir a eje <i class="fas fa-external-link-alt"></i></a>
         </div>
       </div>
     </div>
     {% endfor %}
 </div>
 {% endif %}
+<div class="container-fluid text-center mt-5">
+    <a class="ml-5 mr-3" href="https://www.ahome.gob.mx/"><img src="{% static 'images/escudo.png' %}" width="175px" height="auto" alt=""></a> 
+</div>
 
 </div> 
 </div>
