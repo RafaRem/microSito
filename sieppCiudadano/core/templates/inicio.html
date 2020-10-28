@@ -99,7 +99,7 @@ cursor:pointer; cursor: hand;
 <!--campo para vista del apartado del informe-->
 <div class="container-fluid text-center" style="width:100%; height: 10%; " >
         <div class="row justify-content-center mt-5">
-            <div class="col mt-3 foo-3" >
+            <div class="col mt-3 " >
                 <div>
                     <a  href="/media/{{eje.documento}}" target="_blank" class="btn2 btn--doar" 
                     {% if request.path == '/eje/1' %}  style="background-color: #9C4770; color: white; text-decoration: none !important; font-size: 130%; " 
@@ -119,7 +119,7 @@ cursor:pointer; cursor: hand;
 
 <div class="container-fluid text-center" style="width:100%; height: 10%; " >
     <div class="row justify-content-center mt-5">
-        <div class="col mt-3 foo-3" style="background-color: {{eje.decoracion}};  height: 50px; color:white; border-radius: 8px;">
+        <div class="col mt-3 " style="background-color: {{eje.decoracion}};  height: 50px; color:white; border-radius: 8px;">
             <div>
                 <h3>{{eje.nombre}}</h3>
             </div>
@@ -260,9 +260,9 @@ cursor:pointer; cursor: hand;
 {% if eje.numero == "2" %}
 <div class="container-fluid text-center" style="width:100%; height: 20%;">
 <div class="row justify-content-center mt-5">
-    <div class="col mt-5 foo-3" >
+    <div class="col mt-5" > <!--foo-3   es una clase para animacion del componentes-->
         <div>
-            <a href="https://transformando.ahome.gob.mx/cv/c19/" target="_blank" class="btn_ms btn--covid" style="color: white; text-decoration: none !important;">Micrositio Covid</a>
+            <a href="https://transformando.ahome.gob.mx/cv/c19/" target="_blank" class="btn_ms btn--covid" style="background-color: #9F8062 !important;color: white; text-decoration: none !important;">Micrositio Covid-19</a>
             
         </div>
     </div>
