@@ -288,7 +288,7 @@ cursor:pointer; cursor: hand;
         <h5 class="card-header text-center" style="background-color: {{itemEje.decoracion}}; border:none; color: white;">{{itemEje.nombre}}</h5>
         <div class="card-body">
           <p class="card-text text-justify">{{itemEje.descripcion}}</p>
-          <a href="#" class="btn btn-primary linkbtn" style="background-color: {{itemEje.decoracion}}; border:none; text-align: justify !important;">Ver eje <i class="fas fa-external-link-alt"></i></a>
+          <a href="{% url 'Eje' idEje=ejeNav.numero %}" class="btn btn-primary linkbtn" style="background-color: {{itemEje.decoracion}}; border:none; text-align: justify !important;">Ver eje <i class="fas fa-external-link-alt"></i></a>
         </div>
       </div>
     </div>
