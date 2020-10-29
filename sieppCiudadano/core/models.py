@@ -7,7 +7,7 @@ class Informe(models.Model):
     documento = models.FileField(blank=True, null=True)
     decoracion = models.CharField( max_length=200, null=True, verbose_name="Color Principal del Informe") 
     principal = models.CharField(max_length=500, null=True, verbose_name="Eje que se mostrara primero")
-    video = models.FileField(upload_to='uploads/', null= True, verbose_name="Video Promocional")
+    video = models.FileField(upload_to='uploads/', null= True,blank=True, verbose_name="Video Promocional")
     class Meta:
         verbose_name = "informe"  
         verbose_name_plural = "informes"
