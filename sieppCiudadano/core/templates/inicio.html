@@ -296,8 +296,8 @@ cursor:pointer; cursor: hand;
     <div class="col-sm-12 mt-3">
       <div class="card">
         <h5 class="card-header text-center" style="background-color: {{itemEje.decoracion}}; border:none; color: white;">{{itemEje.nombre}}</h5>
-        <div class="card-body text-start">
-          <p class="card-text text-justify">{{itemEje.descripcion}}</p>
+        <div class="card-body text-justify">
+          <p class="card-text text-justify" style="text-align: justify !important;">{{itemEje.descripcion|linebreaks}}</p>
           <a href="{% url 'Eje' idEje=itemEje.numero %}" class="btn btn-primary linkbtn float-left" style="background-color: {{itemEje.decoracion}}; border:none; ">Ir a eje <i class="fas fa-external-link-alt"></i></a>
         </div>
       </div>
