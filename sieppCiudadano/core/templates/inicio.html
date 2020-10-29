@@ -87,7 +87,7 @@ cursor:pointer; cursor: hand;
 {% if eje.video %}
 <video class="foo-2" autoplay controls  style="width: 100%; height:auto" >
     <source src="{{ eje.video.url }}" type="video/mp4" /> 
-    
+    <source src="{% static 'images/promo_informe.mov' %}" /> 
 </video>
 {% else %}
 <video class="foo-2" autoplay controls  style="width: 100%; height:auto" src="{% static 'images/promo_informe.mov' %}"></video>
