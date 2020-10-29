@@ -26,7 +26,7 @@ class Eje(models.Model):
     estatus = models.BooleanField(verbose_name=("Estatus"), default=True)
     documento = models.FileField(blank=True, null=True)
     decoracion = models.CharField( max_length=200, null=True, verbose_name="Color base")
-    video = models.FileField(upload_to='uploads/', null= True, verbose_name="Video Promocional")
+    video = models.FileField(upload_to='uploads/', null= True, blank=True, verbose_name="Video Promocional")
     class Meta:
         verbose_name = "eje"
         verbose_name_plural = "ejes"
