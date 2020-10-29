@@ -88,6 +88,8 @@ cursor:pointer; cursor: hand;
 <video class="foo-2" autoplay controls  style="width: 100%; height:auto" >
     <source src="{{ eje.video.url }}" type="video/mp4" /> 
     <source src="{% static 'images/promo_informe.mov' %}" /> 
+    Lo sentimos su navegador no soporta el formato de video.
+  <!-- You can embed a Flash player here, to play your mp4 video in older browsers -->
 </video>
 {% else %}
 <video class="foo-2" autoplay controls  style="width: 100%; height:auto" src="{% static 'images/promo_informe.mov' %}"></video>
