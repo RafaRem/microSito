@@ -73,7 +73,7 @@ class EjeView(View):
             ordenar.append(covid)
         ejes = ordenar
         visores = Visores.objects.filter(estatus=True, eje=eje)
-        visores = visores.order_by('pk')
+        visores = visores.order_by('-pk')
         arrayvisores= []
         for visor in visores:
             arrayvisores.append({
