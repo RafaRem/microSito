@@ -73,6 +73,7 @@ class EjeView(View):
             ordenar.append(covid)
         ejes = ordenar
         visores = Visores.objects.filter(estatus=True, eje=eje)
+        visores = visores.order_by('pk')
         arrayvisores= []
         for visor in visores:
             arrayvisores.append({
@@ -81,7 +82,7 @@ class EjeView(View):
                 'mapa': visor.mapa,
                 'icono': visor.icono,
                 'color': visor.color
-            }) 
+        }) 
         
         arrayvisores = json.dumps(arrayvisores)
         return  render(request, "inicio.html",{
