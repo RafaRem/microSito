@@ -291,6 +291,28 @@ cursor:pointer; cursor: hand;
     </div>
 </div>
 {% endif %}
+<!--campo para vista del apartado del informe-->
+{% if not informe %}
+<div class="container-fluid " style="width:100%; height: 10%; " >
+    <div class="row  mt-5">
+        <div class="col mt-3" >
+            <div class="float-left">
+                <a  href="/media/{{eje.documento}}" target="_blank" class="btn2 btn--doar" 
+                {% if request.path == '/eje/1' %}  style="background-color: #9C4770; color: white; text-decoration: none !important; font-size: 130%; " 
+                {% elif  request.path == '/eje/2' %}  style="background-color: #9F8062;  color: white; text-decoration: none !important; font-size: 130%;" 
+                {% elif  request.path == '/eje/3' %}  style="background-color: #A2A286;  color: white; text-decoration: none !important; font-size: 130%;" 
+                {% elif  request.path == '/eje/4' %}  style="background-color: #81524E;  color: white; text-decoration: none !important; font-size: 130%;"  
+                {% elif  request.path == '/eje/5' %}  style="background-color: #5E2551; color: white; text-decoration: none !important; font-size: 130%;" 
+                {% elif  request.path == '/eje/6' %}  style="background-color:#748280; color: white; text-decoration: none !important; font-size: 130%;" 
+                {% else %}
+                style="background-color: #405B50; color: white; text-decoration: none !important; font-size: 130%;"    
+                {%endif%}>Descargar</a>
+            </div>
+        </div>
+        
+    </div>
+</div>
+{% endif %}
 {% if eje.numero == "2" %}
 <div class="container-fluid text-center" style="width:100%; height: 20%;">
 <div class="row justify-content-center mt-5">
