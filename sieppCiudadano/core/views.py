@@ -57,7 +57,7 @@ class InicioInformes(View):
     def get(self,request,):
         fecha = date.today()
         inf = Informe.objects.filter(año= fecha.year)
-        galeria = GaleriaInf.objects.filter(informe= inf)
+        informes = []
         if len(inf) > 0:
             inf = inf[0]
             fecha_informe = str(inf.año)
@@ -65,6 +65,7 @@ class InicioInformes(View):
             return redirect(url)
         
         informes = Informe.objects.filter(estatus=True)
+
         return  render(request, "inicioInformes.html",{
             'informes': informes
         })
