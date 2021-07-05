@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'nota.apps.NotaConfig',
     
+    
 ]
 
 MIDDLEWARE = [

@@ -14,17 +14,16 @@ from rest_framework.renderers import JSONRenderer
 class notasView(View):
     def get(self,request,inf=0):
         array=[]
+        covid = False
         informes = Informe.objects.filter(estatus = True )
-        if inf == 0:
-            fecha = date.today()
-            inf = Informe.objects.get(año= fecha.year)
-            galeria = GaleriaInf.objects.filter(informe= inf)
-            if int(inf.principal) > 0:
-                url = reverse('Eje', args=(inf.principal))
-                return redirect(url)
-        else:
-            inf = Informe.objects.get(año = inf)
-            galeria = GaleriaInf.objects.filter(informe= inf)
+        inf = Informe.objects.filter(año = inf)
+        if len(inf) == 0:
+            url = reverse('inicio')
+            return redirect(url)
+        
+        inf = inf[0]
+        galeria = GaleriaInf.objects.filter(informe= inf)
+        print(inf)
         ejes = Eje.objects.filter(informe = inf, estatus = True)
         ejes = ejes.order_by('numero')
         ordenar = []
@@ -36,28 +35,61 @@ class notasView(View):
         if covid:
             ordenar.append(covid)
         ejes = ordenar
+        fecha_inf = inf.año
         return  render(request, "inicio.html",{
-        'informe': True,    
+        'informe': True,
+        'icono': inf.imagen,    
         'galeria': galeria,
         'informes': informes,
         'eje': inf,
+        'ejes': ejes,
         'descripcion':False,
-        'ejes': ejes
+        'fecha':fecha_inf
+        
+        
         })
 
        
     def post(self,request,idIndicador=0):
         return  render(request, "inicio.html",{'notas': 'notas'})
 
-class EjeView(View):
-    def get(self,request, idEje):
-        array=[]
-        if not idEje.isnumeric():
-            return  render(request, "404.html")
-        eje = Eje.objects.get(numero = idEje,
-        )
+class InicioInformes(View):
+    def get(self,request,):
         fecha = date.today()
-        inf = Informe.objects.get(año= fecha.year)
+        inf = Informe.objects.filter(año= fecha.year)
+        galeria = GaleriaInf.objects.filter(informe= inf)
+        if len(inf) > 0:
+            inf = inf[0]
+            fecha_informe = str(inf.año)
+            url = reverse('informe', args=[str(fecha_informe)])
+            return redirect(url)
+        
+        informes = Informe.objects.filter(estatus=True)
+        return  render(request, "inicioInformes.html",{
+            'informes': informes
+        })
+
+
+
+
+class EjeView(View):
+    def get(self,request, idEje='0', fecha=''):
+        array=[]
+        covid = False
+        if not idEje.isnumeric():
+            url = reverse('inicio')
+            return redirect(url)
+        inf = Informe.objects.filter(año = fecha)
+        if len(inf) == 0:
+            url = reverse('inicio')
+            return redirect(url)
+        
+        inf = inf[0]
+        eje = Eje.objects.filter(numero = idEje, informe=inf )
+        if len(eje) == 0:
+            url = reverse('inicio')
+            return redirect(url)
+        eje = eje[0]
         galeria = GaleriaSub.objects.filter(subeje = eje)
         publicaciones = Publicacion.objects.filter(eje = eje)
         informes = Informe.objects.filter(estatus = True )
@@ -83,7 +115,7 @@ class EjeView(View):
                 'icono': visor.icono,
                 'color': visor.color
         }) 
-        
+        fecha_inf = inf.año
         arrayvisores = json.dumps(arrayvisores)
         return  render(request, "inicio.html",{
         'ejes': ejes,
@@ -93,7 +125,9 @@ class EjeView(View):
         'temas':publicaciones,
         'descripcion':True,
         'informes': informes,
-        'visores' : arrayvisores
+        'visores' : arrayvisores,
+        'fecha':fecha,
+        'icono': inf.imagen, 
         })
 
 class CovidView(View):

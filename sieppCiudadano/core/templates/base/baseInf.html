@@ -33,18 +33,7 @@
   <nav id="nav" class="justify-content-center navbar navbar-expand-lg navbar-light bg-light fixe-top">
     <!-- Logo-Marca -->
     
-    <a class="mr-5 d-none d-md-block" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="navbar-brand mr-5 d-none d-md-block" src="{{icono.url}}" alt="Logo" width="100px" height="auto" id="navbarDropdown"></a><!-- role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-    <!-- Icono 3barras -->
-    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-      
-      <a class="dropdown-item" target="_blank" href="https://www.ahome.gob.mx/primer-informe-de-gobierno/"><img class="navbar-brand mr-5 d-none d-md-block" src="{% static 'images/1ro.png' %}" alt="Logo" width="120px" height="auto" >  </a>
-      <div class="dropdown-divider"></div>
-      {% for informe in informes %}
-        <a class="dropdown-item" href="{% url 'informe' inf=informe.año %}"><img class="navbar-brand mr-5 d-none d-md-block" src="{{informe.imagen.url}}" alt="Logo" width="120px" height="auto" >  </a>
-        <div class="dropdown-divider"></div>
-      {% endfor %}
     
-    </div>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
       aria-label="Toggle navigation" >
@@ -54,13 +43,12 @@
     <!-- Menu links  -->
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul class="navbar-nav mr-auto">
-        {% for ejeNav in ejes %}
-          <li class="nav-item-{{ejeNav.numero}} nav-1 "  data-toggle="tooltip" data-placement="bottom" title="{{ejeNav.nombre}}"  {% if eje.numero == ejeNav.numero  %} style="border-bottom: 5px solid {{ejeNav.decoracion}};" {%endif%}>
-            <a class="btn nav-link ml-3 mr-3" href="{% url 'Eje'  idEje=ejeNav.numero fecha=fecha %}" style="font-weight: bold">{{ejeNav.titulo}}
-            </a>
-          </li>
-        {% endfor %}
+     
+          <li class="nav-item nav-1 "  data-toggle="tooltip" data-placement="bottom" title="nose"  >
+           
 
+          </li>
+        
        
       </ul>
       

@@ -17,12 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url,include
 from django.conf import settings
-from core.views  import *
+from django.views.generic.base import View
+from rest_framework.renderers import CoreJSONRenderer
+from core.views import *
 
 urlpatterns = [
     url(r'^4zZ1245gHHjUytzcvVB/', admin.site.urls),
-    path('', include('core.urls')),
-    
+    path('', InicioInformes.as_view(), name="inicio" ),
+    path('informe/', include('core.urls'), name="segundo"),
+    url(r'^.*/$', InicioInformes.as_view())
 ]
 
 if settings.DEBUG:
